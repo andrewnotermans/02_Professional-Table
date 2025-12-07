@@ -5,6 +5,7 @@ const pagination = document.getElementById('pagination');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const pageNumber = document.getElementById('page-number');
+const tableHeaders = document.querySelectorAll('table-headers');
 
 let data = [];
 let sortedData = [];
@@ -100,10 +101,11 @@ function sortTable(columnIndex) {
 
 //  Clar sort icons for all columns
 function clearSortIcons() {
-    for (let i = 0; i < 4; i++) {
+    return tableHeaders.forEach(header => {
         const icon = document.getElementById(`icon-${i}`);
         icon.className = 'fas fa-sort';
-    }
+    });
+
 }
 // Update the sort icon based on SortDirection
 
